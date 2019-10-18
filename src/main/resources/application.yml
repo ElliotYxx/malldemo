@@ -15,12 +15,21 @@ spring:
         max-idle: 8 #最大空闲连接
         min-idle: 0 #最小空闲时间
     timeout: 3000ms
-    key:
-      prefix:
-        authCode: "portal:authCode:"
-      expire:
-        authCode: 120 #验证码超时时间
+
 mybatis:
   mapper-locations:
     -classpath: mapper/*.xml
     -classpath*: com/**/mapper/*.xml
+
+redis:
+  key:
+    prefix:
+      authCode: "portal:authCode:"
+    expire:
+      authCode: 120 #验证码超时时间
+
+jwt:
+  tokenHeader: Authorization @JWT存储的请求头
+  secrete: mySecret #JWT加密解密使用的密钥
+  expiration: 604800 #JWT的超期限时间
+  tokenHead: Bearer #JWT负载中拿到的开头

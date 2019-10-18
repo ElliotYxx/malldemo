@@ -17,9 +17,9 @@ import java.util.Random;
 public class UmsMemberServiceImpl implements UmsMemberService {
     @Autowired
     private RedisService redisService;
-    @Value("${spring.redis.key.prefix.authCode")
+    @Value("${redis.key.prefix.authCode")
     private String REDIS_KEY_PREFIX_AUTH_CODE;
-    @Value("${spring.redis.key.expire.authCode}")
+    @Value("${redis.key.expire.authCode}")
     private Long AUTH_CODE_EXPIRE_SECONDS;
 
     @Override
